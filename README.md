@@ -1,2 +1,2 @@
 # play_with_astro
-Astroを遊び尽くすリポジトリ
+[Astro](https://astro.build/)を遊び尽くすリポジトリ

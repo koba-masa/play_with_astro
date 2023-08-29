@@ -13,6 +13,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメン�
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="ja">
@@ -22,13 +26,14 @@ const goal = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style>
+    <!-- ダブルクォートで括らない！！ -->
+    <style define:vars={{skillColor, fontWeight, textCase}}>
       h1 {
         color: purple;
         font-size: 4rem;
       }
       .skill {
-        color: green;
+        color: var(--skillColor);
         font-weight: bold;
       }
     </style>

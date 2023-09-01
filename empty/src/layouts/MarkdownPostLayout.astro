@@ -1,19 +1,20 @@
 ---
 import '../styles/blog.css'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const { frontmatter } = Astro.props
 ---
-<h1>{frontmatter.title}</h1>
-<img src={frontmatter.image.url}
-     alt={frontmatter.image.alt}
-     width={frontmatter.image.width}
-     height={frontmatter.image.height}
-/>
-<p>著者: {frontmatter.author} / 投稿日: {frontmatter.pubDate.slice(0,10)}</p>
+<BaseLayout pageTitle={frontmatter.title}>
+  <img src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      width={frontmatter.image.width}
+      height={frontmatter.image.height}
+  />
+  <p>著者: {frontmatter.author} / 投稿日: {frontmatter.pubDate.slice(0,10)}</p>
 
-<slot />
+  <slot />
 
-{frontmatter.tags.map(tag => (
-  <div class="tag">{tag}</div>
-))}
-
+  {frontmatter.tags.map(tag => (
+    <div class="tag">{tag}</div>
+  ))}
+</BaseLayout>

@@ -14,7 +14,9 @@ const { frontmatter } = Astro.props
 
   <slot />
 
-  {frontmatter.tags.map(tag => (
-    <div class="tag">{tag}</div>
-  ))}
+  <div class="tags">
+    {frontmatter.tags.map(tag => (
+      <div class="tag">{tag}</div>
+    ))}
+  </div>
 </BaseLayout>

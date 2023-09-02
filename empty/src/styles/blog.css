@@ -4,3 +4,11 @@
   margin: 2px;
   padding: 2px;
 }
+
+.tags:after {
+  content: "";
+  clear: both;
+  height: 0;
+  display: block;
+  visibility: hidden;
+}

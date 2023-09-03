@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import Tags from '../../components/blog/Tags.astro'
 
 const pageTitle = 'タグインデックス';
 
@@ -9,32 +10,5 @@ const tags = [...new Set(posts.map((post) => post.frontmatter.tags).flat())];
 // const tags = ["astro", "ブログ", "公開学習", "成功", "後退", "コミュニティ"]
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <div class="tags">
-    {
-      tags.map((tag) =>
-        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-      )
-    }
-  </div>
-  <style>
-    a {
-      color: #00539F;
-      text-decoration: none;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
-
-    .tag {
-      margin: 0.25em;
-      border: dotted 1px #a1a1a1;
-      border-radius: .5em;
-      padding: .5em 1em;
-      font-size: 1.15em;
-      background-color: #F8FCFD;
-    }
-  </style>
+  <Tags tags={tags} />
 </BaseLayout>

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Greeting from '../components/Greeting.jsx'
 
 const pageTitle = "ホームページ"
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<h2>私の素晴らしいブログのサブタイトル</h2>
+	<Greeting messages={["どうも", "こんにちは", "初めまして", "ようこそ"]} />
 </BaseLayout>

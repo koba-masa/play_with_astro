@@ -12,7 +12,10 @@
   "dependencies": {
     "@astrojs/preact": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
-    "astro": "^2.10.14",
+    "astro": "^3.1.0",
     "preact": "^10.6.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }

@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import Greeting from '@/components/Greeting.jsx'
+import SVGAstro from '@/components/svg_component/Svg.astro';
+import SVGReact from '@/components/svg_component/Svg.tsx';
+
+import SVGImage from '@/assets/images/github_stats.svg';
+import type About from './about.astro';
 
 const pageTitle = "ホームページ"
+
+const restSpread = {class: "rotate-180"};
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<h2>私の素晴らしいブログのサブタイトル</h2>
+	<SVGAstro icon={SVGImage} class="rotate-180"/>
+	<SVGReact icon="github_stats" class="rotate-180"/>
+	<SVGReact icon="github_stats" {...restSpread} />
+
 	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>

@@ -3,7 +3,7 @@ const { icon, ...attributes } = Astro.props;
 const { default: innerHTML } = await import(`${icon.src}?raw`);
 ---
 
-<Fragment set:html={innerHTML} {...attributes} />
+<svg {...attributes} set:html={innerHTML}></svg>
 
 <style>
   .rotate-180 {
